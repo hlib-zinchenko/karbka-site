@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://karbka.com/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karbka.com/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://karbka.com/ua/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karbka.com/" />
+    <image:image><image:loc>https://karbka.com/img/og-image.png</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/test-swipe.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/test-setup.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/summary.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/test-back.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/collection-settings.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/deck.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://karbka.com/ua/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karbka.com/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://karbka.com/ua/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karbka.com/" />
+    <image:image><image:loc>https://karbka.com/img/og-image-uk.png</image:loc></image:image>
+  </url>
+</urlset>

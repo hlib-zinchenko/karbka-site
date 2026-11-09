@@ -1,0 +1,33 @@
+# Karbka
+
+> Karbka (Ukrainian: Карбка) is a free, open-source flashcard app for phones, tablets and computers. It is a web app (PWA) that installs from the browser (to the home screen on a phone or tablet), works offline, needs no account and keeps every card on the device. Slogan: "Carve it into memory." The name comes from the Ukrainian карб, a notch cut into a tally stick so you'd remember.
+
+- This page in Ukrainian: https://karbka.com/ua/
+- App: https://app.karbka.com/
+- Source code (MIT): https://github.com/hlib-zinchenko/karbka
+- Release notes: https://github.com/hlib-zinchenko/karbka/releases
+
+## How studying works
+
+- Cards are grouped into decks, and decks into collections (for example one per language or course). A deck holds up to 999 cards.
+- In a test, tap a card to flip it, swipe right if you know it and left if you don't. Swipe down edits the card. Undo puts the last card back.
+- On a computer, drag cards with the mouse or use the keyboard: Space or the up and down arrows flip, the right arrow is Know, the left arrow is Don't know, Z or Backspace undoes, S reads the card aloud, E edits it, Escape ends the test.
+- Cram mode: known cards leave the session and missed ones come back at a random spot until you know them all. Refresh mode: one pass.
+- Six levels: New, Weak, Learning, Confident, Strong, Mastered. Know moves a card up one level, Don't know moves it down one. There is no spaced-repetition schedule: you choose what to study.
+- Cards can be read aloud with the device's built-in voices, offline. Each collection lists its languages and a voice for each.
+
+## Data and privacy
+
+- No account and no server: cards are stored in the browser's IndexedDB on the device and are not sent anywhere.
+- Each device (and each browser) keeps its own library; there is no sync. Back up the whole library (with progress) as one JSON file, and import it on another device.
+- Import and export CSV: `front,back,tags,notes`, tags separated by `|`. Comma, tab and semicolon are detected.
+
+## Install
+
+- iPhone and iPad: open https://app.karbka.com/ in Safari, tap Share, then Add to Home Screen. The home-screen app has its own storage, separate from Safari, so install it before adding cards.
+- Android phones and tablets: open https://app.karbka.com/ in Chrome and tap Install app.
+- Computers: open https://app.karbka.com/ in Chrome or Edge and click Install in the address bar. On a Mac, Safari works too: File, then Add to Dock (the Dock app has its own storage, separate from Safari, so add it before adding cards). It also works in an ordinary browser tab.
+
+## Languages
+
+The interface is in English, Ukrainian, Spanish, German, French, Japanese, Portuguese, Italian, Turkish, Dutch and Chinese.

@@ -1,0 +1,15 @@
+{
+  "name": "Karbka",
+  "short_name": "Karbka",
+  "description": "The Karbka landing page. The flashcard app itself installs from https://app.karbka.com/.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#b0a3ce",
+  "theme_color": "#b0a3ce",
+  "icons": [
+    { "src": "/img/pwa-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/pwa-512x512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/img/maskable-icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/img/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

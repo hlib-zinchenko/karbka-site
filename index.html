@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Karbka, flashcards you swipe to learn, even offline</title>
+  <meta name="description" content="Karbka is a free flashcard app for your phone, tablet or computer. Swipe right if you know a card, left if you don't. No account, and it works offline." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Hlib Zinchenko" />
+  <meta name="application-name" content="Karbka" />
+  <meta name="apple-mobile-web-app-title" content="Karbka" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="canonical" href="https://karbka.com/" />
+  <link rel="alternate" hreflang="en" href="https://karbka.com/" />
+  <link rel="alternate" hreflang="uk" href="https://karbka.com/ua/" />
+  <link rel="alternate" hreflang="x-default" href="https://karbka.com/" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="Karbka for language models" />
+  <meta name="theme-color" content="#b0a3ce" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon-180x180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Karbka" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="uk_UA" />
+  <meta property="og:url" content="https://karbka.com/" />
+  <meta property="og:title" content="Karbka, carve it into memory" />
+  <meta property="og:description" content="Flashcards you swipe to learn, on your phone, tablet or computer, even offline. Free, no account, your cards stay on your device." />
+  <meta property="og:image" content="https://karbka.com/img/og-image.png" />
+  <meta property="og:image:secure_url" content="https://karbka.com/img/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Karbka: three fanned flashcards, the top one reading 好き, the slogan Carve it into memory, and the words Free, No account, Works offline." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Karbka, carve it into memory" />
+  <meta name="twitter:description" content="Flashcards you swipe to learn, on your phone, tablet or computer, even offline. Free, no account, your cards stay on your device." />
+  <meta name="twitter:image" content="https://karbka.com/img/og-image.png" />
+  <meta name="twitter:image:alt" content="Karbka: three fanned flashcards, the top one reading 好き, the slogan Carve it into memory, and the words Free, No account, Works offline." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://karbka.com/#website",
+        "url": "https://karbka.com/",
+        "name": "Karbka",
+        "alternateName": "Карбка",
+        "inLanguage": [
+          "en",
+          "uk"
+        ],
+        "publisher": {
+          "@id": "https://karbka.com/#author"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://karbka.com/#webpage",
+        "url": "https://karbka.com/",
+        "name": "Karbka, flashcards you swipe to learn, even offline",
+        "description": "Karbka is a free flashcard app for your phone, tablet or computer. Swipe right if you know a card, left if you don't. No account, and it works offline.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://karbka.com/#website"
+        },
+        "about": {
+          "@id": "https://karbka.com/#app"
+        },
+        "mainEntity": {
+          "@id": "https://karbka.com/#app"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://karbka.com/img/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "dateModified": "2026-11-09"
+      },
+      {
+        "@type": [
+          "SoftwareApplication",
+          "WebApplication"
+        ],
+        "@id": "https://karbka.com/#app",
+        "name": "Karbka",
+        "alternateName": "Карбка",
+        "slogan": "Carve it into memory.",
+        "description": "Offline flashcards for phones, tablets and computers that install from the browser. Tap a card to flip it, swipe right if you know it and left if you don't; on a computer, drag with the mouse or press the arrow keys. No account and no server: your cards stay on your device.",
+        "url": "https://karbka.com/",
+        "installUrl": "https://app.karbka.com/",
+        "applicationCategory": "EducationalApplication",
+        "applicationSubCategory": "Flashcards",
+        "operatingSystem": "iOS, iPadOS, Android, Windows, macOS, Linux",
+        "browserRequirements": "Safari on iPhone and iPad, Chrome on Android phones and tablets, Chrome or Edge on a computer, Safari on a Mac.",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+          "Swipe right if you know a card, left if you don't, with undo",
+          "Works on phones, tablets and computers; on a computer, drag with the mouse or use the keyboard",
+          "Cram mode brings missed cards back until you know them all",
+          "Six levels per card, from New to Mastered, with no fixed schedule",
+          "Cards read aloud with the device's own voices, offline",
+          "Decks grouped into collections, up to 999 cards a deck",
+          "Import and export CSV from Excel or Google Sheets",
+          "Back up the whole library, progress included, to one file",
+          "Works offline, no account, no server",
+          "Interface in 11 languages"
+        ],
+        "inLanguage": [
+          "en",
+          "uk",
+          "es",
+          "de",
+          "fr",
+          "ja",
+          "pt",
+          "it",
+          "tr",
+          "nl",
+          "zh"
+        ],
+        "image": "https://karbka.com/img/og-image.png",
+        "screenshot": [
+          {
+            "@type": "ImageObject",
+            "url": "https://karbka.com/img/test-swipe.webp",
+            "width": 390,
+            "height": 844,
+            "caption": "A card being swiped right, with a Know badge"
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://karbka.com/img/test-setup.webp",
+            "width": 390,
+            "height": 844,
+            "caption": "Test setup: decks, number of cards, which side first, mode and order"
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://karbka.com/img/summary.webp",
+            "width": 390,
+            "height": 844,
+            "caption": "Summary after a test: what you knew on the first try"
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://karbka.com/img/test-back.webp",
+            "width": 390,
+            "height": 844,
+            "caption": "The back of a card, with a speaker button, tags and a note"
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://karbka.com/img/collection-settings.webp",
+            "width": 390,
+            "height": 844,
+            "caption": "Collection settings: a language and a voice for each"
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://karbka.com/img/deck.webp",
+            "width": 390,
+            "height": 844,
+            "caption": "A deck imported from CSV, each card with its tags"
+          }
+        ],
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@id": "https://karbka.com/#author"
+        },
+        "publisher": {
+          "@id": "https://karbka.com/#author"
+        },
+        "sameAs": [
+          "https://app.karbka.com/",
+          "https://github.com/hlib-zinchenko/karbka"
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://karbka.com/#source",
+        "name": "Karbka source code",
+        "codeRepository": "https://github.com/hlib-zinchenko/karbka",
+        "programmingLanguage": [
+          "TypeScript",
+          "Svelte"
+        ],
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@id": "https://karbka.com/#author"
+        },
+        "targetProduct": {
+          "@id": "https://karbka.com/#app"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://karbka.com/#author",
+        "name": "Hlib Zinchenko",
+        "url": "https://github.com/hlib-zinchenko"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/murecho-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/onest-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav wrap">
+    <a class="brand" href="/" aria-label="Karbka, home">
+      <img src="/img/icon.svg" width="44" height="44" alt="" />
+      <span>Karbka</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#install">Install</a>
+      <a class="nav-source" href="https://github.com/hlib-zinchenko/karbka">Source</a>
+      <a class="nav-lang" href="/ua/" hreflang="uk" lang="uk">Українська</a>
+      <a class="btn btn-small" href="https://app.karbka.com/">Open app</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero: the headline beside a deck the visitor can study. -->
+    <section class="hero wrap" aria-labelledby="hero-h">
+      <div class="hero-copy">
+        <h1 id="hero-h">Carve it into memory.</h1>
+        <p class="lede">Flashcards you swipe to learn, on your phone, tablet or computer, even offline.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://app.karbka.com/">Open Karbka</a>
+          <a class="btn" href="#install">How to install</a>
+        </div>
+      </div>
+
+      <figure class="demo" data-demo>
+        <div class="deck" data-deck>
+          <div class="card" data-lang="uk-UA">
+            <div class="card-inner">
+              <div class="face face-front">
+                <span class="card-lang">Ukrainian</span>
+                <span class="card-word" lang="uk">карб</span>
+              </div>
+              <div class="face face-back">
+                <span class="card-hint" lang="uk">карб</span>
+                <span class="card-word card-word-back">a notch cut in a tally stick, so you remember</span>
+                <span class="tags"><span>noun</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-lang="ja-JP">
+            <div class="card-inner">
+              <div class="face face-front">
+                <span class="card-lang">Japanese</span>
+                <span class="card-word" lang="ja">好き</span>
+              </div>
+              <div class="face face-back">
+                <span class="card-hint" lang="ja">すき</span>
+                <span class="card-word card-word-back">liked, loved</span>
+                <span class="tags"><span>adjective</span><span>N5</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-lang="es-ES">
+            <div class="card-inner">
+              <div class="face face-front">
+                <span class="card-lang">Spanish</span>
+                <span class="card-word" lang="es">recordar</span>
+              </div>
+              <div class="face face-back">
+                <span class="card-hint" lang="es">recordar</span>
+                <span class="card-word card-word-back">to remember</span>
+                <span class="tags"><span>verb</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-lang="de-DE">
+            <div class="card-inner">
+              <div class="face face-front">
+                <span class="card-lang">German</span>
+                <span class="card-word" lang="de">das Gedächtnis</span>
+              </div>
+              <div class="face face-back">
+                <span class="card-hint" lang="de">das Gedächtnis</span>
+                <span class="card-word card-word-back">memory</span>
+                <span class="tags"><span>noun</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-lang="fr-FR">
+            <div class="card-inner">
+              <div class="face face-front">
+                <span class="card-lang">French</span>
+                <span class="card-word" lang="fr">par cœur</span>
+              </div>
+              <div class="face face-back">
+                <span class="card-hint" lang="fr">par cœur</span>
+                <span class="card-word card-word-back">by heart</span>
+                <span class="tags"><span>phrase</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-lang="uk-UA">
+            <div class="card-inner">
+              <div class="face face-front">
+                <span class="card-lang">Ukrainian</span>
+                <span class="card-word" lang="uk">закарбувати</span>
+              </div>
+              <div class="face face-back">
+                <span class="card-hint" lang="uk">закарбувати</span>
+                <span class="card-word card-word-back">to carve into memory</span>
+                <span class="tags"><span>verb</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="deck-done" data-done hidden>
+            <p class="deck-done-title">All six carved.</p>
+            <p>Now make a deck of your own words.</p>
+            <button class="btn btn-mint" type="button" data-restart>Study again</button>
+          </div>
+
+          <button class="speak" type="button" data-speak aria-label="Read the card aloud" hidden>
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" /><path d="M15.5 8.5a5 5 0 0 1 0 7" /><path d="M18.5 5.5a9.5 9.5 0 0 1 0 13" /></svg>
+          </button>
+        </div>
+
+        <div class="demo-controls" data-controls>
+          <button class="btn btn-rose" type="button" data-answer="miss">Don’t know</button>
+          <button class="btn btn-round" type="button" data-flip aria-label="Flip the card">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8" /><path d="M3 3v5h5" /></svg>
+          </button>
+          <button class="btn btn-mint" type="button" data-answer="know">Know</button>
+        </div>
+
+        <div class="tally" data-tally role="progressbar" aria-label="Cards carved" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
+          <div class="stick" data-stick aria-hidden="true"></div>
+          <span class="tally-count" data-count>0 of 6 carved</span>
+        </div>
+
+        <figcaption>Flip the card, then swipe it: right if you know it, left if you don’t.</figcaption>
+        <p class="visually-hidden" aria-live="polite" data-status></p>
+      </figure>
+    </section>
+
+    <!-- A study session, in the app's own screenshots. -->
+    <section class="sheet study" aria-labelledby="study-h">
+      <div class="study-head">
+        <h2 id="study-h">Swipe right if you know it</h2>
+        <p>Pick the decks and how many cards. Missed cards come back until you know them all.</p>
+      </div>
+      <ol class="shots">
+        <li>
+          <figure class="shot">
+            <img src="/img/test-setup.webp" width="390" height="844" loading="lazy" alt="Test setup: decks, number of cards, which side first, mode and order" />
+          </figure>
+          <p class="shot-caption">Choose the decks, the side to show first and the order</p>
+        </li>
+        <li>
+          <figure class="shot">
+            <img src="/img/test-swipe.webp" width="390" height="844" loading="lazy" alt="A card being swiped right, with a Know badge on it" />
+          </figure>
+          <p class="shot-caption">One swipe a card, with undo if your thumb slips</p>
+        </li>
+        <li>
+          <figure class="shot">
+            <img src="/img/summary.webp" width="390" height="844" loading="lazy" alt="Summary: 6 of 8 known on the first try, with Continue and Retry missed" />
+          </figure>
+          <p class="shot-caption">See what you knew on the first try, then retry the misses</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- The six levels, drawn as the stairs a card climbs. -->
+    <section class="levels wrap" aria-labelledby="levels-h">
+      <div class="levels-head">
+        <h2 id="levels-h">Six levels, and no schedule</h2>
+        <p>Know moves a card up one level. Don’t know moves it down one. You choose what to study next.</p>
+      </div>
+      <ol class="stairs" aria-label="Card levels, from new to mastered">
+        <li style="--n: 1" class="lv lv0"><span class="step" aria-hidden="true"></span><span class="step-name">New</span></li>
+        <li style="--n: 2" class="lv lv1"><span class="step" aria-hidden="true"></span><span class="step-name">Weak</span></li>
+        <li style="--n: 3" class="lv lv2"><span class="step" aria-hidden="true"></span><span class="step-name">Learning</span></li>
+        <li style="--n: 4" class="lv lv3"><span class="step" aria-hidden="true"></span><span class="step-name">Confident</span></li>
+        <li style="--n: 5" class="lv lv4"><span class="step" aria-hidden="true"></span><span class="step-name">Strong</span></li>
+        <li style="--n: 6" class="lv lv5"><span class="step" aria-hidden="true"></span><span class="step-name">Mastered</span></li>
+      </ol>
+    </section>
+
+    <!-- Reading aloud. -->
+    <section class="sheet sheet-butter aloud" aria-labelledby="aloud-h">
+      <div class="aloud-shots">
+        <figure class="shot shot-lead">
+          <img src="/img/test-back.webp" width="390" height="844" loading="lazy" alt="The back of a card: to come, with a speaker button, tags and a note" />
+        </figure>
+        <figure class="shot shot-side">
+          <img src="/img/collection-settings.webp" width="390" height="844" loading="lazy" alt="Collection settings: Japanese and American English voices, each with a voice picker" />
+        </figure>
+      </div>
+      <div class="aloud-copy">
+        <h2 id="aloud-h">Every card, read aloud</h2>
+        <p>Tap the speaker and your device reads the card in its own voices, with no internet. Each collection keeps its languages, with a voice for each.</p>
+      </div>
+    </section>
+
+    <!-- CSV import: the file, and the deck it becomes. -->
+    <section class="csv wrap" aria-labelledby="csv-h">
+      <div class="csv-head">
+        <h2 id="csv-h">Write a deck in a spreadsheet</h2>
+        <p>Type front, back, tags and notes in Excel or Google Sheets, then import the CSV. Comma, tab or semicolon all work.</p>
+      </div>
+      <figure class="csv-file">
+        <figcaption>japanese-n5-verbs.csv</figcaption>
+        <pre><code><span class="csv-row csv-header">front,back,tags,notes</span>
+<span class="csv-row" lang="ja">食べる,to eat,verb|N5|food,</span>
+<span class="csv-row" lang="ja">飲む,to drink,verb|N5|food,</span>
+<span class="csv-row" lang="ja">行く,to go,verb|N5,</span>
+<span class="csv-row" lang="ja">来る,to come,verb|N5,irregular</span></code></pre>
+      </figure>
+      <figure class="shot shot-deck">
+        <img src="/img/deck.webp" width="390" height="844" loading="lazy" alt="The imported deck, Japanese N5 verbs: to eat, to drink, to go, to come, each with its tags" />
+      </figure>
+    </section>
+
+    <!-- Privacy, in plain facts. -->
+    <section class="sheet sheet-plum private" aria-labelledby="private-h">
+      <h2 id="private-h">Your cards stay on your device</h2>
+      <dl class="facts">
+        <div>
+          <dt>No account</dt>
+          <dd>Open it and start. There is nothing to sign up for.</dd>
+        </div>
+        <div>
+          <dt>No server</dt>
+          <dd>Cards live in this device’s storage and are never sent anywhere.</dd>
+        </div>
+        <div>
+          <dt>Backups you keep</dt>
+          <dd>Each device keeps its own cards. Export the whole library, progress included, to move it to another phone, tablet or computer.</dd>
+        </div>
+        <div>
+          <dt>Works offline</dt>
+          <dd>On a plane or in the metro, it runs from the copy on your device.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Install: the job of the page. -->
+    <section class="install wrap" id="install" aria-labelledby="install-h">
+      <div class="install-head">
+        <h2 id="install-h">Install it from the browser</h2>
+        <p>No App Store and no Play Store. Karbka is a web app for phones, tablets and computers, and installs right from the browser.</p>
+      </div>
+      <div class="platforms">
+        <section class="panel platform" aria-labelledby="ios-h">
+          <h3 id="ios-h">iPhone and iPad</h3>
+          <ol class="steps">
+            <li><span>Open <a href="https://app.karbka.com/">app.karbka.com</a> in Safari</span></li>
+            <li><span>Tap Share</span></li>
+            <li><span>Tap Add to Home Screen</span></li>
+          </ol>
+          <p class="platform-note">The home-screen app keeps its own storage, apart from Safari. Install it first, then add your cards.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="android-h">
+          <h3 id="android-h">Android</h3>
+          <ol class="steps">
+            <li><span>Open <a href="https://app.karbka.com/">app.karbka.com</a> in Chrome</span></li>
+            <li><span>Tap Install app</span></li>
+          </ol>
+          <p class="platform-note">Phones and tablets alike.</p>
+        </section>
+        <section class="panel platform platform-wide" aria-labelledby="computer-h">
+          <h3 id="computer-h">Computer</h3>
+          <ol class="steps">
+            <li><span>Open <a href="https://app.karbka.com/">app.karbka.com</a> in Chrome, Edge or Safari on a Mac</span></li>
+            <li><span>In Chrome or Edge, click Install in the address bar. In Safari, choose File, then Add to Dock</span></li>
+          </ol>
+          <p class="platform-note">Like on iPhone, the Dock app keeps its own storage apart from Safari, so add it first. Or just keep it in a browser tab. Drag cards with the mouse, or press <kbd>→</kbd> if you know a card, <kbd>←</kbd> if you don’t, and <kbd>Space</kbd> to flip.</p>
+        </section>
+      </div>
+    </section>
+
+    <!-- Close: the name, and the action once more. -->
+    <section class="close wrap" aria-labelledby="close-h">
+      <img class="close-icon" src="/img/icon.svg" width="240" height="240" alt="" loading="lazy" />
+      <div class="close-copy">
+        <h2 id="close-h" lang="uk">Закарбуй у памʼяті.</h2>
+        <p class="close-name">Karbka comes from <span lang="uk">карб</span>, the Ukrainian word for a notch cut into a tally stick so you’d remember.</p>
+        <p>I built it for my partner, who couldn’t find a flashcard app that fit how she studies.</p>
+        <a class="btn btn-primary" href="https://app.karbka.com/">Open Karbka</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="/" aria-label="Karbka, home">
+        <img src="/img/icon.svg" width="36" height="36" alt="" />
+        <span>Karbka</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="https://app.karbka.com/">Open the app</a></li>
+        <li><a href="https://github.com/hlib-zinchenko/karbka">Source code</a></li>
+        <li><a href="https://github.com/hlib-zinchenko/karbka/releases">Release notes</a></li>
+      </ul>
+      <p class="footer-langs">In English, <a href="/ua/" hreflang="uk" lang="uk">Українська</a>, <span lang="es">Español</span>, <span lang="de">Deutsch</span>, <span lang="fr">Français</span>, <span lang="ja">日本語</span>, <span lang="pt">Português</span>, <span lang="it">Italiano</span>, <span lang="tr">Türkçe</span>, <span lang="nl">Nederlands</span> and <span lang="zh">中文</span>.</p>
+      <p class="footer-small">Free and open source under the MIT licence. This site sets no cookies and runs no analytics.</p>
+    </div>
+  </footer>
+</body>
+</html>

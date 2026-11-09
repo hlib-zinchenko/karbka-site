@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <style>
+    .bg{fill:#B0A3CE}.back{fill:#A8E4CB}.mid{fill:#8C7BB8}.front{fill:#FCFBFF}
+    @media (prefers-color-scheme: dark){.bg{fill:#1E1730}.back{fill:#8FD3B6}.mid{fill:#5E4F88}.front{fill:#B0A3CE}}
+  </style>
+  <rect class="bg" width="512" height="512" rx="112"/>
+  <g transform="translate(0 6)">
+    <rect class="back" x="178" y="122" width="156" height="226" rx="24" transform="rotate(-18 256 400)"/>
+    <rect class="mid" x="178" y="122" width="156" height="226" rx="24"/>
+    <rect class="front" x="178" y="122" width="156" height="226" rx="24" transform="rotate(18 256 400)"/>
+  </g>
+</svg>

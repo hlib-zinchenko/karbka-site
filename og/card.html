@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Source for the link-sharing previews, img/og-image.png (English) and img/og-image-uk.png (Ukrainian).
+     Re-render both with the commands in README.md. Not a page: robots.txt keeps crawlers out of /og/. -->
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="robots" content="noindex" />
+<title>Karbka preview image</title>
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  html, body { margin: 0; background: #b0a3ce; overflow: hidden; }
+  body {
+    width: 1200px; height: 630px; box-sizing: border-box;
+    display: flex; align-items: center; gap: 56px; padding: 0 88px 0 64px;
+    color: #2b2142; font-family: 'Onest Variable', sans-serif;
+  }
+  .stack { flex: none; width: 430px; height: 510px; filter: drop-shadow(0 10px 0 rgb(62 49 102 / 0.18)); }
+  h1 { margin: 0; font: 900 112px/1 'Murecho Variable', sans-serif; letter-spacing: -0.03em; }
+  .slogan { margin: 18px 0 0; font-size: 46px; font-weight: 800; line-height: 1.15; }
+  p { margin: 18px 0 34px; font-size: 38px; font-weight: 500; line-height: 1.25; color: #3e3166; }
+  ul { display: flex; flex-wrap: wrap; gap: 14px; margin: 0; padding: 0; list-style: none; }
+  li { padding: 12px 22px; border-radius: 999px; background: #fcfbff; box-shadow: 0 5px 0 #8c7bb8; font-size: 26px; font-weight: 700; color: #3e3166; }
+  html[lang='uk'] body { gap: 44px; padding-right: 64px; }
+  li.mint { background: #a8e4cb; box-shadow: 0 5px 0 #5fa88a; }
+</style>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="96 60 320 380" class="stack">
+  
+  <g transform="translate(0 6)">
+    <rect x="178" y="122" width="156" height="226" rx="24" fill="#A8E4CB" transform="rotate(-18 256 400)"/>
+    <rect x="178" y="122" width="156" height="226" rx="24" fill="#8C7BB8"/>
+    <g transform="rotate(18 256 400)">
+      <rect x="178" y="122" width="156" height="226" rx="24" fill="#FCFBFF"/>
+      <path fill="#3E3166" transform="translate(217.00 226) scale(0.03809 -0.03809)" d="M462 310Q279 434 104 514Q203 786 279 1157H61V1356H315L338 1491Q351 1570 378 1751L583 1725Q578 1691 516 1356H897Q880 693 730 374Q846 297 946 213L829 24Q698 133 627 188Q491 -11 262 -197L106 -37Q325 83 462 310ZM550 489Q654 758 686 1157H479Q436 916 348 616L344 603Q418 565 518 507ZM1581 1083V909H1996V716H1581V0Q1581 -96 1543 -139Q1498 -190 1368 -190Q1227 -190 1087 -178L1046 33Q1218 14 1307 14Q1348 14 1357 38Q1362 52 1362 76V716H901V909H1362V1132Q1366 1136 1382 1152Q1529 1299 1628 1435H974V1628H1836L1951 1515Q1782 1286 1581 1083Z"/>
+      <path fill="#3E3166" transform="translate(217.00 310) scale(0.03809 -0.03809)" d="M203 1475H809Q776 1568 738 1696L959 1708Q998 1575 1035 1475H1731V1282H1104Q1161 1140 1233 993H1866V800H1334Q1439 617 1545 472L1321 407Q1205 572 1088 800H168V993H996Q938 1116 877 1282H203ZM1536 -92Q1344 -106 1179 -106Q746 -106 552 -25Q283 88 283 332Q283 469 358 553L537 455Q506 392 506 330Q506 204 678 148Q831 98 1146 98Q1304 98 1518 115Z"/>
+    </g>
+  </g>
+</svg>
+<div>
+  <h1 data-t="name">Karbka</h1>
+  <div class="slogan" data-t="slogan">Carve it into memory.</div>
+  <p data-t="lede">Flashcards you swipe to learn,<br />on phone, tablet or computer.</p>
+  <ul>
+    <li class="mint" data-t="free">Free</li>
+    <li data-t="account">No account</li>
+    <li data-t="offline">Works offline</li>
+  </ul>
+</div>
+<script>
+  // og/card.html#uk renders the Ukrainian preview.
+  if (location.hash === '#uk') {
+    document.documentElement.lang = 'uk';
+    const uk = {
+      name: 'Карбка',
+      slogan: 'Закарбуй у памʼяті.',
+      lede: 'Флешкартки зі свайпом<br />для телефона, планшета<br />й компʼютера.',
+      free: 'Безкоштовно',
+      account: 'Без акаунта',
+      offline: 'Офлайн',
+    };
+    for (const el of document.querySelectorAll('[data-t]')) el.innerHTML = uk[el.dataset.t];
+  }
+</script>
+</body>
+</html>

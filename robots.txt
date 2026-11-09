@@ -1,0 +1,7 @@
+# Every crawler, search engines and AI crawlers alike, may read the site.
+User-agent: *
+Allow: /
+# The source of the link-preview images, not a page.
+Disallow: /og/
+
+Sitemap: https://karbka.com/sitemap.xml
