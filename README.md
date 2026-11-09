@@ -33,6 +33,12 @@ Screenshots are the app's README set (`docs/screenshots/` in the app repo, made 
 cwebp -q 82 ../flashcards-pwa/docs/screenshots/test-swipe.png -o img/test-swipe.webp
 ```
 
+The Ukrainian page uses its own set in `img/uk/`: the Ukrainian interface with a library for learning English (`docs/demo/demo-backup-uk.json`, made by `npm run screenshots:uk` into `docs/screenshots/uk/`):
+
+```bash
+cwebp -q 82 ../flashcards-pwa/docs/screenshots/uk/test-swipe.png -o img/uk/test-swipe.webp
+```
+
 ## SEO
 
 Each page's `<head>` has the description, canonical and `hreflang` links (English is `x-default`), Open Graph and Twitter tags, and a JSON-LD graph: `WebSite`, `WebPage`, the app (`SoftwareApplication`), its `SoftwareSourceCode` and the author. Change the two pages together. `sitemap.xml` lists both pages with their images; bump `lastmod` (and `dateModified` in the JSON-LD) when the copy changes. `llms.txt` describes the app for AI crawlers; update it with the app's features.

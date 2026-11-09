@@ -21,5 +21,11 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://karbka.com/ua/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://karbka.com/" />
     <image:image><image:loc>https://karbka.com/img/og-image-uk.png</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/uk/test-swipe.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/uk/test-setup.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/uk/summary.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/uk/test-back.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/uk/collection-settings.webp</image:loc></image:image>
+    <image:image><image:loc>https://karbka.com/img/uk/deck.webp</image:loc></image:image>
   </url>
 </urlset>
