@@ -385,6 +385,26 @@ a {
   .nav-links {
     gap: var(--space-xs);
   }
+  /* The brand, the language link and the button only just fit a 360px phone; tighten all three. */
+  .nav {
+    gap: var(--space-xs);
+  }
+  .brand {
+    font-size: 1.25rem;
+  }
+  .brand img {
+    width: 36px;
+    height: 36px;
+  }
+  .nav-links .btn-small {
+    padding-inline: var(--space-sm);
+  }
+}
+@media (max-width: 22rem) {
+  /* A 320px phone: the icon alone stands for the brand (the link keeps its label). */
+  .nav .brand span {
+    display: none;
+  }
 }
 
 /* ---------- Hero ---------- */
@@ -1052,6 +1072,57 @@ kbd {
   text-align: center;
 }
 
+/* ---------- What we count ---------- */
+.counts {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--space-lg);
+  row-gap: var(--space-xl);
+  align-items: start;
+}
+.counts-head {
+  grid-column: 1 / 5;
+  display: grid;
+  gap: var(--space-lg);
+  padding-top: var(--space-lg);
+}
+.counts-head p {
+  max-width: 34ch;
+}
+.counts-lists {
+  grid-column: 6 / 13;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+.counts .panel {
+  /* Cards on the paper sheet: a shade darker than it, as screenshots sit on --surface-2 in .study. */
+  background: var(--surface-2);
+}
+.counts-list {
+  display: grid;
+  align-content: start;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+}
+.counts-list ul {
+  display: grid;
+  gap: var(--space-xs);
+  margin: 0;
+  padding-left: 1.2em;
+}
+.counts-list li::marker {
+  color: var(--muted-2);
+}
+.counts-note {
+  grid-column: 1 / -1;
+  color: var(--muted-2);
+  font-size: var(--text-small);
+}
+.counts-note p {
+  margin: 0 0 var(--space-xs);
+}
+
 /* ---------- Close ---------- */
 .close {
   display: grid;
@@ -1165,12 +1236,15 @@ kbd {
   .shot-deck,
   .install-head,
   .platforms,
+  .counts-head,
+  .counts-lists,
   .close-icon,
   .close-copy {
     grid-column: 1 / -1;
   }
   .study-head,
-  .install-head {
+  .install-head,
+  .counts-head {
     padding-top: 0;
   }
   .aloud-copy {
@@ -1256,10 +1330,12 @@ kbd {
     margin-top: var(--space-2xl);
   }
   .facts,
-  .platforms {
+  .platforms,
+  .counts-lists {
     grid-template-columns: minmax(0, 1fr);
   }
-  .platform {
+  .platform,
+  .counts-list {
     padding: var(--space-lg) var(--space-md) var(--space-md);
   }
 }

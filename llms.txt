@@ -6,6 +6,7 @@
 - App: https://app.karbka.com/
 - Source code (MIT): https://github.com/hlib-zinchenko/karbka
 - Release notes: https://github.com/hlib-zinchenko/karbka/releases
+- Contact (questions, bug reports): hello@hzinchenko.com
 
 ## How studying works
 
@@ -18,7 +19,8 @@
 
 ## Data and privacy
 
-- No account and no server: cards are stored in the browser's IndexedDB on the device and are not sent anywhere.
+- No account: cards are stored in the browser's IndexedDB on the device and are never sent anywhere.
+- Usage counts: the app sends one anonymous count a day and the site one per page view and per click on Open Karbka, to Karbka's own AWS Lambda and DynamoDB table in Stockholm (no third party, no cookies, no ID, no IP address kept). Only coarse values: device type, installed or not, app version and language, how long the device has had the app and how many cards it holds (in ranges), and when it last finished a test. It shows whether to keep developing Karbka and make native iPhone and Android apps. It can be turned off in the app's Settings, and Global Privacy Control turns it off. Details: https://karbka.com/#counts
 - Each device (and each browser) keeps its own library; there is no sync. Back up the whole library (with progress) as one JSON file, and import it on another device.
 - Import and export CSV: `front,back,tags,notes`, tags separated by `|`. Comma, tab and semicolon are detected.
 

@@ -92,7 +92,7 @@
         "name": "Karbka",
         "alternateName": "Карбка",
         "slogan": "Carve it into memory.",
-        "description": "Offline flashcards for phones, tablets and computers that install from the browser. Tap a card to flip it, swipe right if you know it and left if you don't; on a computer, drag with the mouse or press the arrow keys. No account and no server: your cards stay on your device.",
+        "description": "Offline flashcards for phones, tablets and computers that install from the browser. Tap a card to flip it, swipe right if you know it and left if you don't; on a computer, drag with the mouse or press the arrow keys. No account, and your cards never leave your device.",
         "url": "https://karbka.com/",
         "installUrl": "https://app.karbka.com/",
         "applicationCategory": "EducationalApplication",
@@ -115,7 +115,7 @@
           "Decks grouped into collections, up to 999 cards a deck",
           "Import and export CSV from Excel or Google Sheets",
           "Back up the whole library, progress included, to one file",
-          "Works offline, no account, no server",
+          "Works offline, no account, cards never leave the device",
           "Interface in 11 languages"
         ],
         "inLanguage": [
@@ -209,7 +209,8 @@
         "@type": "Person",
         "@id": "https://karbka.com/#author",
         "name": "Hlib Zinchenko",
-        "url": "https://github.com/hlib-zinchenko"
+        "url": "https://github.com/hlib-zinchenko",
+        "email": "mailto:hello@hzinchenko.com"
       }
     ]
   }
@@ -447,7 +448,7 @@
           <dd>Open it and start. There is nothing to sign up for.</dd>
         </div>
         <div>
-          <dt>No server</dt>
+          <dt>Nothing uploaded</dt>
           <dd>Cards live in this device’s storage and are never sent anywhere.</dd>
         </div>
         <div>
@@ -496,6 +497,38 @@
       </div>
     </section>
 
+    <!-- What we count, and why: the only data that leaves anyone's device. -->
+    <section class="sheet counts" id="counts" aria-labelledby="counts-h">
+      <div class="counts-head">
+        <h2 id="counts-h">What we count, and why</h2>
+        <p>We count how many people use Karbka and on which devices. That tells us whether to keep developing it, and whether to make apps for the App Store and Google Play.</p>
+        <p>The counts go to our own small setup on AWS in Stockholm: one Lambda function and one DynamoDB table. No third party, no cookies, no ID, no IP address kept, and never your cards.</p>
+      </div>
+      <div class="counts-lists">
+        <section class="panel counts-list" aria-labelledby="counts-site-h">
+          <h3 id="counts-site-h">On this site</h3>
+          <ul>
+            <li>Each page view: English or Ukrainian page, the kind of device (like Android phone or Mac), and the name of the site you came from, like google.com</li>
+            <li>Each click on Open Karbka</li>
+          </ul>
+        </section>
+        <section class="panel counts-list" aria-labelledby="counts-app-h">
+          <h3 id="counts-app-h">In the app, once a day</h3>
+          <ul>
+            <li>The kind of device, and whether the app is installed or open in a browser tab</li>
+            <li>The app’s version and language</li>
+            <li>Roughly how long you’ve had it: first day, a week, a month, three months or longer</li>
+            <li>Roughly how many cards: none, up to 50, 500, 2,000 or more</li>
+            <li>Whether you finished a test this week, this month, earlier or never</li>
+          </ul>
+        </section>
+        <div class="counts-note">
+          <p>Each count is only a number for a day, like “12 views from Android phones”. Nothing tells one person from another, and counts are deleted after two years.</p>
+          <p>Turn it off in the app in Settings, Usage counts, or with Global Privacy Control in your browser. The code is open: <a href="https://github.com/hlib-zinchenko/karbka/tree/main/infra/usage-counter">the counter on GitHub</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Close: the name, and the action once more. -->
     <section class="close wrap" aria-labelledby="close-h">
       <img class="close-icon" src="/img/icon.svg" width="240" height="240" alt="" loading="lazy" />
@@ -518,9 +551,10 @@
         <li><a href="https://app.karbka.com/">Open the app</a></li>
         <li><a href="https://github.com/hlib-zinchenko/karbka">Source code</a></li>
         <li><a href="https://github.com/hlib-zinchenko/karbka/releases">Release notes</a></li>
+        <li>Questions or a bug: <a href="mailto:hello@hzinchenko.com">hello@hzinchenko.com</a></li>
       </ul>
       <p class="footer-langs">In English, <a href="/ua/" hreflang="uk" lang="uk">Українська</a>, <span lang="es">Español</span>, <span lang="de">Deutsch</span>, <span lang="fr">Français</span>, <span lang="ja">日本語</span>, <span lang="pt">Português</span>, <span lang="it">Italiano</span>, <span lang="tr">Türkçe</span>, <span lang="nl">Nederlands</span> and <span lang="zh">中文</span>.</p>
-      <p class="footer-small">Free and open source under the MIT licence. This site sets no cookies and runs no analytics.</p>
+      <p class="footer-small">Free and open source under the MIT licence. This site sets no cookies and uses no third-party analytics. It counts visits on our own server, with nothing that tells you apart: <a href="#counts">what we count</a>.</p>
     </div>
   </footer>
 </body>

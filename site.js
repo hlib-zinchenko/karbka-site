@@ -1,3 +1,50 @@
+// Usage counts (what and why: the "What we count" section, #counts). One request per page view and
+// one per click on a link to the app, to Karbka's own counter (a Lambda and a DynamoDB table on AWS;
+// its code is in the app repo, infra/usage-counter). Only coarse values, no ID, no cookie; the counter
+// keeps no IP address. Off under Global Privacy Control, and anywhere but karbka.com.
+(() => {
+  // The counter's Function URL (empty sends nothing).
+  const USAGE_URL = 'https://2b2tarw2mpxzk6bok5r77wyvpe0xnnpa.lambda-url.eu-north-1.on.aws/';
+  if (!USAGE_URL || location.hostname !== 'karbka.com' || navigator.globalPrivacyControl === true) return;
+
+  const ua = navigator.userAgent;
+  const device = (() => {
+    if (/iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return { platform: 'ios', form: 'tablet' };
+    if (/iPhone|iPod/.test(ua)) return { platform: 'ios', form: 'phone' };
+    if (/Android/.test(ua)) return { platform: 'android', form: /Mobile/.test(ua) ? 'phone' : 'tablet' };
+    if (/Macintosh/.test(ua)) return { platform: 'mac', form: 'desktop' };
+    if (/Windows/.test(ua)) return { platform: 'windows', form: 'desktop' };
+    if (/Linux/.test(ua) && !/CrOS/.test(ua)) return { platform: 'linux', form: 'desktop' };
+    return { platform: 'other', form: /Mobi/.test(ua) ? 'phone' : 'desktop' };
+  })();
+  const page = location.pathname.startsWith('/ua/') ? 'ua' : 'en';
+
+  const send = (body) => {
+    // text/plain and no-cors: a plain request with no preflight and no cookies; the answer isn't needed.
+    fetch(USAGE_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      credentials: 'omit',
+      referrerPolicy: 'no-referrer',
+      keepalive: true,
+      headers: { 'content-type': 'text/plain' },
+      body: JSON.stringify({ page, ...device, ...body }),
+    }).catch(() => {});
+  };
+
+  // Only the host name of the page that linked here, never its path.
+  let ref = '';
+  try {
+    ref = document.referrer ? new URL(document.referrer).hostname : '';
+  } catch {}
+  send({ kind: 'view', ref });
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest?.('a[href^="https://app.karbka.com"]');
+    if (link) send({ kind: 'open' });
+  });
+})();
+
 // The hero deck: flip a card, swipe it right if you know it and left if you don't.
 // Known cards leave and carve a notch into the tally stick; missed ones come back
 // at a random spot, as in the app's Cram mode.

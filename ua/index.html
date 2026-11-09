@@ -92,7 +92,7 @@
         "name": "Карбка",
         "alternateName": "Karbka",
         "slogan": "Закарбуй у памʼяті.",
-        "description": "Офлайн-флешкартки для телефонів, планшетів і компʼютерів, які встановлюються з браузера. Натисніть картку, щоб перевернути, і свайпніть управо, якщо знаєте, або вліво, якщо ні; на компʼютері тягніть мишею або натискайте стрілки. Без акаунта й без сервера: картки лишаються на вашому пристрої.",
+        "description": "Офлайн-флешкартки для телефонів, планшетів і компʼютерів, які встановлюються з браузера. Натисніть картку, щоб перевернути, і свайпніть управо, якщо знаєте, або вліво, якщо ні; на компʼютері тягніть мишею або натискайте стрілки. Без акаунта, а картки ніколи не покидають ваш пристрій.",
         "url": "https://karbka.com/ua/",
         "installUrl": "https://app.karbka.com/",
         "applicationCategory": "EducationalApplication",
@@ -115,7 +115,7 @@
           "Колоди в колекціях, до 999 карток у колоді",
           "Імпорт і експорт CSV з Excel або Google Таблиць",
           "Резервна копія всієї бібліотеки з прогресом в одному файлі",
-          "Працює офлайн, без акаунта й без сервера",
+          "Працює офлайн, без акаунта, картки не покидають пристрій",
           "Інтерфейс 11 мовами"
         ],
         "inLanguage": [
@@ -209,7 +209,8 @@
         "@type": "Person",
         "@id": "https://karbka.com/#author",
         "name": "Hlib Zinchenko",
-        "url": "https://github.com/hlib-zinchenko"
+        "url": "https://github.com/hlib-zinchenko",
+        "email": "mailto:hello@hzinchenko.com"
       }
     ]
   }
@@ -446,7 +447,7 @@
           <dd>Відкрийте й почніть. Реєструватися ніде не треба.</dd>
         </div>
         <div>
-          <dt>Без сервера</dt>
+          <dt>Нічого не вивантажується</dt>
           <dd>Картки зберігаються на цьому пристрої й нікуди не надсилаються.</dd>
         </div>
         <div>
@@ -495,6 +496,38 @@
       </div>
     </section>
 
+    <!-- What we count, and why: the only data that leaves anyone's device. -->
+    <section class="sheet counts" id="counts" aria-labelledby="counts-h">
+      <div class="counts-head">
+        <h2 id="counts-h">Що ми рахуємо і навіщо</h2>
+        <p>Ми рахуємо, скільки людей користується Карбкою і на яких пристроях. Так ми розуміємо, чи варто розвивати її далі й чи робити застосунки для App Store і Google Play.</p>
+        <p>Лічильники зберігаються в нашому власному невеликому сервісі на AWS у Стокгольмі: одна функція Lambda й одна таблиця DynamoDB. Без третіх сторін, cookies та ідентифікаторів, IP-адреси не зберігаються, а ваші картки туди ніколи не потрапляють.</p>
+      </div>
+      <div class="counts-lists">
+        <section class="panel counts-list" aria-labelledby="counts-site-h">
+          <h3 id="counts-site-h">На цьому сайті</h3>
+          <ul>
+            <li>Кожен перегляд сторінки: англійська чи українська сторінка, тип пристрою (наприклад, телефон з Android чи Mac) і назва сайту, з якого ви прийшли, як-от google.com</li>
+            <li>Кожне натискання «Відкрити Карбку»</li>
+          </ul>
+        </section>
+        <section class="panel counts-list" aria-labelledby="counts-app-h">
+          <h3 id="counts-app-h">У застосунку, раз на день</h3>
+          <ul>
+            <li>Тип пристрою і чи застосунок встановлено, чи він відкритий у вкладці браузера</li>
+            <li>Версія й мова застосунку</li>
+            <li>Приблизно як довго ви ним користуєтеся: перший день, тиждень, місяць, три місяці чи довше</li>
+            <li>Приблизно скільки карток: жодної, до 50, 500, 2000 чи більше</li>
+            <li>Чи завершували ви тест цього тижня, цього місяця, раніше чи ніколи</li>
+          </ul>
+        </section>
+        <div class="counts-note">
+          <p>Кожен лічильник — це лише число за день, як-от «12 переглядів із телефонів з Android». Ніщо не відрізняє одну людину від іншої, а лічильники видаляються через два роки.</p>
+          <p>Вимкнути можна в застосунку: Налаштування, «Статистика використання», або увімкнувши Global Privacy Control у браузері. Код відкритий: <a href="https://github.com/hlib-zinchenko/karbka/tree/main/infra/usage-counter">лічильник на GitHub</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Close: the name, and the action once more. -->
     <section class="close wrap" aria-labelledby="close-h">
       <img class="close-icon" src="/img/icon.svg" width="240" height="240" alt="" loading="lazy" />
@@ -502,7 +535,7 @@
         <h2 id="close-h" lang="en">Carve it into memory.</h2>
         <p class="close-name">Назва походить від слова «карб»: зарубка на бирці, яку робили, щоб памʼятати.</p>
         <p>Карбку створено для партнерки автора: вона не знайшла застосунку з картками, який пасував би до того, як вона вчиться.</p>
-        <a class="btn btn-primary" href="https://app.karbka.com/">Open Karbka</a>
+        <a class="btn btn-primary" href="https://app.karbka.com/">Відкрити Карбку</a>
       </div>
     </section>
   </main>
@@ -517,9 +550,10 @@
         <li><a href="https://app.karbka.com/">Відкрити застосунок</a></li>
         <li><a href="https://github.com/hlib-zinchenko/karbka">Вихідний код</a></li>
         <li><a href="https://github.com/hlib-zinchenko/karbka/releases">Що нового</a></li>
+        <li>Питання чи помилка: <a href="mailto:hello@hzinchenko.com">hello@hzinchenko.com</a></li>
       </ul>
       <p class="footer-langs">Застосунок має 11 мов: українська, <a href="/" hreflang="en" lang="en">English</a>, <span lang="es">Español</span>, <span lang="de">Deutsch</span>, <span lang="fr">Français</span>, <span lang="ja">日本語</span>, <span lang="pt">Português</span>, <span lang="it">Italiano</span>, <span lang="tr">Türkçe</span>, <span lang="nl">Nederlands</span> і <span lang="zh">中文</span>.</p>
-      <p class="footer-small">Безкоштовно й з відкритим кодом за ліцензією MIT. Сайт не ставить cookies і не збирає аналітику.</p>
+      <p class="footer-small">Безкоштовно й з відкритим кодом за ліцензією MIT. Сайт не ставить cookies і не використовує сторонньої аналітики. Відвідування рахуються на нашому власному сервері, без жодних даних, що вирізняють вас: <a href="#counts">що ми рахуємо</a>.</p>
     </div>
   </footer>
 </body>

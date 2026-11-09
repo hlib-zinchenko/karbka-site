@@ -1,0 +1,55 @@
+name: Deploy to GitHub Pages
+
+# Deploys only from version tags:
+#   git tag v1.0.0 && git push origin v1.0.0
+# Pages: Settings → Pages → Source: GitHub Actions, custom domain karbka.com;
+# Settings → Environments → github-pages → Deployment branches and tags: a tag rule v*.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Collect the files the site serves
+        run: |
+          mkdir _site
+          cp -R index.html 404.html styles.css site.js favicon.ico favicon.svg site.webmanifest robots.txt sitemap.xml llms.txt ua img fonts _site/
+      - name: Check every local link and image exists
+        run: |
+          cd _site
+          rc=0
+          for page in index.html ua/index.html 404.html; do
+            for ref in $(grep -oE '(href|src)="/[^"#?]*' "$page" | sed -E 's/^(href|src)="//' | sort -u); do
+              path="${ref#/}"
+              case "$path" in ''|*/) path="${path}index.html" ;; esac
+              [ -e "$path" ] || { echo "::error file=$page::missing $ref"; rc=1; }
+            done
+          done
+          exit $rc
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -2,13 +2,26 @@
 
 The landing page for [Karbka](https://app.karbka.com/), the offline flashcards app ([source](https://github.com/hlib-zinchenko/karbka)).
 
-Plain static files, no build step: `index.html` (English), `ua/index.html` (Ukrainian, keep it in step with the English page), `404.html`, `styles.css`, `site.js`, self-hosted fonts in `fonts/` and the app's screenshots in `img/`. GitHub Pages serves the repository root at https://karbka.com/ (`CNAME`).
+Plain static files, no build step: `index.html` (English), `ua/index.html` (Ukrainian, keep it in step with the English page), `404.html`, `styles.css`, `site.js`, self-hosted fonts in `fonts/` and the app's screenshots in `img/`. GitHub Pages serves them at https://karbka.com/.
 
 Preview locally (paths are root-absolute, so serve the folder as the root):
 
 ```bash
 python3 -m http.server 5200
 ```
+
+## Deploy
+
+Only from version tags (`.github/workflows/deploy.yml`): it copies the served files into `_site` (not `README.md`, `og/` or `.github/`), checks every local link and image exists, and publishes.
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+One-time setup: Settings → Pages → Source: **GitHub Actions**, custom domain `karbka.com` with Enforce HTTPS; Settings → Environments → `github-pages` → Deployment branches and tags: add a tag rule `v*`. DNS (Route 53): four `A` records for `karbka.com` to GitHub Pages (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153), and `CNAME www` → `hlib-zinchenko.github.io` if `www` should work.
+
+The usage counter's address is `USAGE_URL` at the top of `site.js` (the counter itself: `infra/usage-counter/` in the app repo).
 
 ## Design
 
