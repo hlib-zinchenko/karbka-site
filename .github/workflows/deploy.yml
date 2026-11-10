@@ -24,15 +24,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # the dates below come from each page's last commit
       - name: Collect the files the site serves
         run: |
           mkdir _site
-          cp -R index.html 404.html styles.css site.js favicon.ico favicon.svg site.webmanifest robots.txt sitemap.xml llms.txt ua img fonts _site/
+          cp -R index.html 404.html styles.css site.js favicon.ico favicon.svg site.webmanifest robots.txt sitemap.xml llms.txt ua csv img fonts _site/
+      - name: Date each page by its last commit (sitemap lastmod, JSON-LD dateModified)
+        run: |
+          python3 - <<'EOF'
+          import re, subprocess
+          pages = {'index.html': 'https://karbka.com/', 'ua/index.html': 'https://karbka.com/ua/',
+                   'csv/index.html': 'https://karbka.com/csv/', 'ua/csv/index.html': 'https://karbka.com/ua/csv/'}
+          sitemap = open('_site/sitemap.xml', encoding='utf-8').read()
+          for page, url in pages.items():
+              date = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', page], capture_output=True, text=True, check=True).stdout.strip()
+              assert date, f'no commit for {page}'
+              path = '_site/' + page
+              html = open(path, encoding='utf-8').read()
+              html, n = re.subn(r'"dateModified": "\d{4}-\d{2}-\d{2}"', f'"dateModified": "{date}"', html)
+              assert n == 1, f'{page}: {n} dateModified'
+              open(path, 'w', encoding='utf-8').write(html)
+              sitemap, n = re.subn(rf'(<loc>{re.escape(url)}</loc>\s*<lastmod>)[^<]*', rf'\g<1>{date}', sitemap)
+              assert n == 1, f'sitemap: {n} lastmod for {url}'
+              print(page, date)
+          open('_site/sitemap.xml', 'w', encoding='utf-8').write(sitemap)
+          EOF
       - name: Check every local link and image exists
         run: |
           cd _site
           rc=0
-          for page in index.html ua/index.html 404.html; do
+          for page in index.html ua/index.html csv/index.html ua/csv/index.html 404.html; do
             for ref in $(grep -oE '(href|src)="/[^"#?]*' "$page" | sed -E 's/^(href|src)="//' | sort -u); do
               path="${ref#/}"
               case "$path" in ''|*/) path="${path}index.html" ;; esac

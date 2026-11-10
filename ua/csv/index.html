@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Імпорт флешкарток із CSV, Excel чи Google Таблиць · Карбка</title>
+  <meta name="description" content="Як зробити флешкартки в таблиці й імпортувати їх у Карбку: стовпці CSV, теги, кілька колод в одному файлі та збереження CSV з Excel, Google Таблиць, Numbers чи Quizlet." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Hlib Zinchenko" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="canonical" href="https://karbka.com/ua/csv/" />
+  <link rel="alternate" hreflang="en" href="https://karbka.com/csv/" />
+  <link rel="alternate" hreflang="uk" href="https://karbka.com/ua/csv/" />
+  <link rel="alternate" hreflang="x-default" href="https://karbka.com/csv/" />
+  <meta name="theme-color" content="#b0a3ce" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon-180x180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Карбка" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:url" content="https://karbka.com/ua/csv/" />
+  <meta property="og:title" content="Імпорт флешкарток із CSV, Excel чи Google Таблиць" />
+  <meta property="og:description" content="Як зробити флешкартки в таблиці й імпортувати їх у Карбку: стовпці CSV, теги, кілька колод в одному файлі та збереження CSV з Excel, Google Таблиць, Numbers чи Quizlet." />
+  <meta property="og:image" content="https://karbka.com/img/og-image-uk.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Карбка: три картки віялом, на верхній 好き, гасло «Закарбуй у памʼяті.» і слова Безкоштовно, Без акаунта, Офлайн." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Points at the entities on the home page (@id), so this guide joins the same graph. Keep in step with /csv/. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://karbka.com/ua/csv/#article",
+        "url": "https://karbka.com/ua/csv/",
+        "headline": "Імпорт флешкарток із CSV, Excel чи Google Таблиць",
+        "name": "Імпорт флешкарток із CSV, Excel чи Google Таблиць · Карбка",
+        "description": "Як зробити флешкартки в таблиці й імпортувати їх у Карбку: стовпці CSV, теги, кілька колод в одному файлі та збереження CSV з Excel, Google Таблиць, Numbers чи Quizlet.",
+        "inLanguage": "uk",
+        "isPartOf": {
+          "@id": "https://karbka.com/#website"
+        },
+        "about": {
+          "@id": "https://karbka.com/#app"
+        },
+        "author": {
+          "@id": "https://karbka.com/#author"
+        },
+        "publisher": {
+          "@id": "https://karbka.com/#author"
+        },
+        "image": "https://karbka.com/img/og-image-uk.png",
+        "datePublished": "2026-11-10",
+        "dateModified": "2026-11-10",
+        "breadcrumb": {
+          "@id": "https://karbka.com/ua/csv/#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://karbka.com/ua/csv/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Карбка",
+            "item": "https://karbka.com/ua/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Імпорт із CSV",
+            "item": "https://karbka.com/ua/csv/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/murecho-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/onest-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">До змісту</a>
+
+  <header class="nav wrap">
+    <a class="brand" href="/ua/" aria-label="Карбка, головна">
+      <img src="/img/icon.svg" width="44" height="44" alt="" />
+      <span>Карбка</span>
+    </a>
+    <nav class="nav-links" aria-label="Головне">
+      <a class="nav-install" href="/ua/#install">Встановлення</a>
+      <a class="nav-lang" href="/csv/" hreflang="en" lang="en">English</a>
+      <a class="btn btn-small" href="https://app.karbka.com/">Відкрити</a>
+    </nav>
+  </header>
+
+  <!-- A how-to for people searching how to import flashcards from a spreadsheet. The app's own rules: src/lib/io/csv.ts in the app repo. -->
+  <main id="main" class="guide">
+    <section class="guide-hero wrap" aria-labelledby="guide-h">
+      <nav class="crumbs" aria-label="Навігаційний ланцюжок">
+        <ol>
+          <li><a href="/ua/">Карбка</a></li>
+          <li aria-current="page">Імпорт із CSV</li>
+        </ol>
+      </nav>
+      <h1 id="guide-h">Імпорт флешкарток із CSV, Excel чи Google Таблиць</h1>
+      <p class="lede">Впишіть картки в таблицю, збережіть її як CSV та імпортуйте в Карбку за кілька дотиків. Сотні карток за раз, з тегами й нотатками.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://app.karbka.com/">Відкрити Карбку</a>
+      </div>
+    </section>
+
+    <section class="sheet guide-format" aria-labelledby="format-h">
+      <div class="guide-format-copy">
+        <h2 id="format-h">Формат</h2>
+        <p>Одна картка — один рядок. Потрібні лише перші два стовпці, решту можна пропустити.</p>
+        <div class="table-scroll">
+          <table class="columns">
+            <thead><tr><th scope="col">Стовпець</th><th scope="col">Що в ньому</th></tr></thead>
+            <tbody>
+            <tr><th scope="row"><code>front</code></th><td>Лицьова сторона: слово, запитання чи термін.</td></tr>
+            <tr><th scope="row"><code>back</code></th><td>Зворотна сторона: переклад, відповідь чи визначення.</td></tr>
+            <tr><th scope="row"><code>tags</code></th><td>Необовʼязково. Кілька тегів через <code>|</code>, як-от <code>дієслово|B1|їжа</code>.</td></tr>
+            <tr><th scope="row"><code>notes</code></th><td>Необовʼязково. Нотатка на звороті картки.</td></tr>
+            <tr><th scope="row"><code>deck</code></th><td>Необовʼязково. Назва колоди, щоб імпортувати кілька колод з одного файлу в колекцію.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <figure class="csv-file">
+        <figcaption>english-verbs.csv</figcaption>
+        <pre><code><span class="csv-row csv-header">front,back,tags,notes</span>
+<span class="csv-row">eat,їсти,дієслово|B1|їжа,"ate, eaten"</span>
+<span class="csv-row">drink,пити,дієслово|B1|їжа,"drank, drunk"</span>
+<span class="csv-row">remember,памʼятати,дієслово|B1,</span>
+<span class="csv-row">forget,забувати,дієслово|B1,"forgot, forgotten"</span></code></pre>
+      </figure>
+      <div class="guide-rules">
+        <h3>Варто знати</h3>
+        <ul>
+          <li><strong>Роздільник.</strong> Кома, табуляція чи крапка з комою: Карбка визначить сама. Excel з українськими налаштуваннями зберігає з крапкою з комою, і це теж працює.</li>
+          <li><strong>Рядок заголовків.</strong> Необовʼязковий. Перший рядок на кшталт <code>front,back</code> чи <code>слово,переклад</code>, <code>питання,відповідь</code>, <code>термін,значення</code> розпізнається й пропускається. Якщо вийшло не так, поставте чи зніміть позначку «Перший рядок — заголовок» перед імпортом.</li>
+          <li><strong>Коми всередині картки.</strong> Візьміть клітинку в подвійні лапки: <code>"ate, eaten"</code>. Таблиці роблять це самі, коли зберігають CSV.</li>
+          <li><strong>Будь-яка абетка.</strong> Зберігайте файл у UTF-8, щоб кирилиця, японська чи літери з діакритикою не зламалися. Порожні рядки пропускаються.</li>
+          <li><strong>Великі файли.</strong> У колоді до 999 карток. Більший файл стане кількома колодами: «Дієслова», «Дієслова 2», «Дієслова 3»…</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="guide-sources wrap" aria-labelledby="from-h">
+      <div class="guide-head">
+        <h2 id="from-h">Збережіть CSV із таблиці</h2>
+        <p>Зробіть аркуш, де в стовпці A лицьова сторона, а в B зворотна, за бажанням додайте теги й нотатки, а тоді:</p>
+      </div>
+      <div class="guide-panels">
+        <section class="panel platform" aria-labelledby="from-1">
+          <h3 id="from-1">Google Таблиці</h3>
+          <ol class="steps">
+            <li><span>Файл, потім Завантажити</span></li>
+            <li><span>Значення, розділені комами (.csv)</span></li>
+          </ol>
+          <p class="platform-note">На телефоні, у застосунку Таблиці: ⋮, Поділитися й експортувати, Зберегти як, CSV.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="from-2">
+          <h3 id="from-2">Excel</h3>
+          <ol class="steps">
+            <li><span>Файл, потім Зберегти як (або Зберегти копію)</span></li>
+            <li><span>CSV UTF-8 (з комами як роздільниками)</span></li>
+          </ol>
+          <p class="platform-note">Звичайний «CSV» може зламати кирилицю; оберіть варіант з UTF-8.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="from-3">
+          <h3 id="from-3">Numbers</h3>
+          <ol class="steps">
+            <li><span>Файл, потім Експортувати в, потім CSV</span></li>
+            <li><span>Кодування тексту: Unicode (UTF-8)</span></li>
+          </ol>
+          <p class="platform-note">На iPhone та iPad: ⋯, Експортувати, CSV.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="from-4">
+          <h3 id="from-4">Quizlet</h3>
+          <ol class="steps">
+            <li><span>Відкрийте свій набір, потім ⋯ і Експортувати</span></li>
+            <li><span>Лишіть табуляцію між терміном і визначенням та новий рядок між рядками</span></li>
+            <li><span>Скопіюйте текст у файл із закінченням .txt чи .csv</span></li>
+          </ol>
+          <p class="platform-note">Quizlet дозволяє експортувати набори, які ви створили.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="sheet sheet-butter guide-import" aria-labelledby="import-h">
+      <div class="guide-head">
+        <h2 id="import-h">Імпортуйте в Карбку</h2>
+      </div>
+      <div class="guide-import-body">
+        <div class="guide-panels guide-panels-stack">
+        <section class="panel platform" aria-labelledby="import-1">
+          <h3 id="import-1">У нову колоду</h3>
+          <ol class="steps">
+            <li><span>Відкрийте колекцію й натисніть ⋯ угорі</span></li>
+            <li><span>Натисніть «Імпорт CSV» і виберіть файл</span></li>
+            <li><span>Перевірте попередній перегляд і назву колоди (це назва файлу) й натисніть «Імпортувати»</span></li>
+          </ol>
+          <p class="platform-note">У порожній колекції кнопка «Імпорт CSV» одразу на екрані.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="import-2">
+          <h3 id="import-2">У наявну колоду</h3>
+          <ol class="steps">
+            <li><span>Відкрийте колоду й натисніть ⋯, Більше</span></li>
+            <li><span>Натисніть «Імпорт CSV» і виберіть файл</span></li>
+            <li><span>Натисніть «Імпортувати»: картки додадуться після наявних</span></li>
+          </ol>
+          <p class="platform-note">Стовпець deck тут не враховується: усі картки йдуть у цю колоду.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="import-3">
+          <h3 id="import-3">Кілька колод за раз</h3>
+          <ol class="steps">
+            <li><span>Додайте пʼятий стовпець, deck, з назвою колоди в кожному рядку</span></li>
+            <li><span>Імпортуйте його через ⋯ угорі колекції</span></li>
+            <li><span>Кожна назва стане окремою колодою в колекції</span></li>
+          </ol>
+          <p class="platform-note">Саме такий файл робить «Поділитися колекцією», тож уся колекція переїжджає за раз.</p>
+        </section>
+        </div>
+        <figure class="shot shot-deck">
+          <img src="/img/uk/deck.webp" width="390" height="844" loading="lazy" alt="Імпортована колода англійських дієслів, кожна картка з тегами" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="guide-export wrap" aria-labelledby="export-h">
+      <h2 id="export-h">Експорт назад у CSV</h2>
+        <p>Щоб редагувати картки в таблиці чи надіслати колоду другові, відкрийте колоду й натисніть ⋯, «Поділитися CSV». Для всієї колекції, зі стовпцем deck, натисніть ⋯ угорі колекції, «Поділитися колекцією». Excel відкриває ці файли без зламаної кирилиці.</p>
+        <p>CSV містить картки, але не ваш прогрес. Щоб перенести все разом із рівнями на інший пристрій, скористайтеся Налаштуваннями: «Резервна копія та перенесення», «Експортувати бібліотеку».</p>
+    </section>
+
+    <section class="close wrap" aria-labelledby="close-h">
+      <img class="close-icon" src="/img/icon.svg" width="240" height="240" alt="" loading="lazy" />
+      <div class="close-copy">
+        <h2 id="close-h">Ваша колода за один файл звідси.</h2>
+        <p>Безкоштовно, офлайн, без акаунта.</p>
+        <a class="btn btn-primary" href="https://app.karbka.com/">Відкрити Карбку</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="/ua/" aria-label="Карбка, головна">
+        <img src="/img/icon.svg" width="36" height="36" alt="" />
+        <span>Карбка</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="/ua/#faq">Запитання й відповіді</a></li>
+        <li><a href="https://app.karbka.com/">Відкрити застосунок</a></li>
+        <li><a href="https://github.com/hlib-zinchenko/karbka">Вихідний код</a></li>
+        <li><a href="https://github.com/hlib-zinchenko/karbka/releases">Що нового</a></li>
+        <li>Питання чи помилка: <a href="mailto:hello@hzinchenko.com">hello@hzinchenko.com</a></li>
+      </ul>
+      <p class="footer-small">Безкоштовно й з відкритим кодом за ліцензією MIT. Сайт не ставить cookies і не використовує сторонньої аналітики. Відвідування рахуються на нашому власному сервері, без жодних даних, що вирізняють вас: <a href="/ua/#counts">що ми рахуємо</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

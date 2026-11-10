@@ -2,7 +2,7 @@
 
 The landing page for [Karbka](https://app.karbka.com/), the offline flashcards app ([source](https://github.com/hlib-zinchenko/karbka)).
 
-Plain static files, no build step: `index.html` (English), `ua/index.html` (Ukrainian, keep it in step with the English page), `404.html`, `styles.css`, `site.js`, self-hosted fonts in `fonts/` and the app's screenshots in `img/`. GitHub Pages serves them at https://karbka.com/.
+Plain static files, no build step: `index.html` (English), `ua/index.html` (Ukrainian, keep it in step with the English page), the CSV import guide `csv/index.html` and `ua/csv/index.html` (same rule), `404.html`, `styles.css`, `site.js`, self-hosted fonts in `fonts/` and the app's screenshots in `img/`. GitHub Pages serves them at https://karbka.com/.
 
 Preview locally (paths are root-absolute, so serve the folder as the root):
 
@@ -12,7 +12,7 @@ python3 -m http.server 5200
 
 ## Deploy
 
-Only from version tags (`.github/workflows/deploy.yml`): it copies the served files into `_site` (not `README.md`, `og/` or `.github/`), checks every local link and image exists, and publishes.
+Only from version tags (`.github/workflows/deploy.yml`): it copies the served files into `_site` (not `README.md`, `og/` or `.github/`), dates each page by its last commit, checks every local link and image exists, and publishes. A new page or folder needs adding to its `cp` line, its date step and its link check.
 
 ```bash
 git tag v1.0.0
@@ -41,7 +41,9 @@ cwebp -q 82 ../flashcards-pwa/docs/screenshots/uk/test-swipe.png -o img/uk/test-
 
 ## SEO
 
-Each page's `<head>` has the description, canonical and `hreflang` links (English is `x-default`), Open Graph and Twitter tags, and a JSON-LD graph: `WebSite`, `WebPage`, the app (`SoftwareApplication`), its `SoftwareSourceCode` and the author. Change the two pages together. `sitemap.xml` lists both pages with their images; bump `lastmod` (and `dateModified` in the JSON-LD) when the copy changes. `llms.txt` describes the app for AI crawlers; update it with the app's features.
+Each page's `<head>` has the description, canonical and `hreflang` links (English is `x-default`), Open Graph and Twitter tags, and a JSON-LD graph: `WebSite`, `WebPage`, the app (`SoftwareApplication`), its `SoftwareSourceCode`, the author and the questions section (`FAQPage`; keep it the same as the visible questions). The guide pages add a `TechArticle` and a `BreadcrumbList` that point at those entities by `@id`; the app's own `index.html` uses the same `https://karbka.com/#app` id, so search engines see one product. Change each English page and its Ukrainian copy together. The h1 starts with what Karbka is, in words people search for, before the slogan.
+
+`sitemap.xml` lists every page with its images. Its `lastmod` and each page's `dateModified` are set on deploy from the page's last commit, so they needn't be bumped by hand. `llms.txt` describes the app for AI crawlers; update it with the app's features.
 
 The link previews `img/og-image.png` and `img/og-image-uk.png` (1200×630) are rendered from `og/card.html` with the local server running:
 

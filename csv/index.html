@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Import flashcards from CSV, Excel or Google Sheets · Karbka</title>
+  <meta name="description" content="How to make flashcards in a spreadsheet and import them into Karbka: the CSV columns, tags, several decks in one file, and saving CSV from Excel, Google Sheets, Numbers or Quizlet." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Hlib Zinchenko" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="canonical" href="https://karbka.com/csv/" />
+  <link rel="alternate" hreflang="en" href="https://karbka.com/csv/" />
+  <link rel="alternate" hreflang="uk" href="https://karbka.com/ua/csv/" />
+  <link rel="alternate" hreflang="x-default" href="https://karbka.com/csv/" />
+  <meta name="theme-color" content="#b0a3ce" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon-180x180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Karbka" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="uk_UA" />
+  <meta property="og:url" content="https://karbka.com/csv/" />
+  <meta property="og:title" content="Import flashcards from CSV, Excel or Google Sheets" />
+  <meta property="og:description" content="How to make flashcards in a spreadsheet and import them into Karbka: the CSV columns, tags, several decks in one file, and saving CSV from Excel, Google Sheets, Numbers or Quizlet." />
+  <meta property="og:image" content="https://karbka.com/img/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Karbka: three fanned flashcards, the top one reading 好き, the slogan Carve it into memory, and the words Free, No account, Works offline." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Points at the entities on the home page (@id), so this guide joins the same graph. Keep in step with /ua/csv/. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://karbka.com/csv/#article",
+        "url": "https://karbka.com/csv/",
+        "headline": "Import flashcards from CSV, Excel or Google Sheets",
+        "name": "Import flashcards from CSV, Excel or Google Sheets · Karbka",
+        "description": "How to make flashcards in a spreadsheet and import them into Karbka: the CSV columns, tags, several decks in one file, and saving CSV from Excel, Google Sheets, Numbers or Quizlet.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://karbka.com/#website"
+        },
+        "about": {
+          "@id": "https://karbka.com/#app"
+        },
+        "author": {
+          "@id": "https://karbka.com/#author"
+        },
+        "publisher": {
+          "@id": "https://karbka.com/#author"
+        },
+        "image": "https://karbka.com/img/og-image.png",
+        "datePublished": "2026-11-10",
+        "dateModified": "2026-11-10",
+        "breadcrumb": {
+          "@id": "https://karbka.com/csv/#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://karbka.com/csv/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Karbka",
+            "item": "https://karbka.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Import from CSV",
+            "item": "https://karbka.com/csv/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/murecho-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/onest-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav wrap">
+    <a class="brand" href="/" aria-label="Karbka, home">
+      <img src="/img/icon.svg" width="44" height="44" alt="" />
+      <span>Karbka</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="nav-install" href="/#install">Install</a>
+      <a class="nav-lang" href="/ua/csv/" hreflang="uk" lang="uk">Українська</a>
+      <a class="btn btn-small" href="https://app.karbka.com/">Open app</a>
+    </nav>
+  </header>
+
+  <!-- A how-to for people searching how to import flashcards from a spreadsheet. The app's own rules: src/lib/io/csv.ts in the app repo. -->
+  <main id="main" class="guide">
+    <section class="guide-hero wrap" aria-labelledby="guide-h">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Karbka</a></li>
+          <li aria-current="page">Import from CSV</li>
+        </ol>
+      </nav>
+      <h1 id="guide-h">Import flashcards from CSV, Excel or Google Sheets</h1>
+      <p class="lede">Type your cards in a spreadsheet, save it as CSV and import it into Karbka in a few taps. Hundreds of cards at once, with tags and notes.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://app.karbka.com/">Open Karbka</a>
+      </div>
+    </section>
+
+    <section class="sheet guide-format" aria-labelledby="format-h">
+      <div class="guide-format-copy">
+        <h2 id="format-h">The format</h2>
+        <p>One card per row. Only the first two columns are needed; the rest can be left out.</p>
+        <div class="table-scroll">
+          <table class="columns">
+            <thead><tr><th scope="col">Column</th><th scope="col">What goes in it</th></tr></thead>
+            <tbody>
+            <tr><th scope="row"><code>front</code></th><td>The front of the card: the word, question or term.</td></tr>
+            <tr><th scope="row"><code>back</code></th><td>The back: the translation, answer or definition.</td></tr>
+            <tr><th scope="row"><code>tags</code></th><td>Optional. Several tags separated by <code>|</code>, like <code>verb|N5|food</code>.</td></tr>
+            <tr><th scope="row"><code>notes</code></th><td>Optional. A note shown on the back of the card.</td></tr>
+            <tr><th scope="row"><code>deck</code></th><td>Optional. A deck name, to import several decks from one file into a collection.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <figure class="csv-file">
+        <figcaption>japanese-n5-verbs.csv</figcaption>
+        <pre><code><span class="csv-row csv-header">front,back,tags,notes</span>
+<span class="csv-row" lang="ja">食べる,to eat,verb|N5|food,</span>
+<span class="csv-row" lang="ja">飲む,to drink,verb|N5|food,</span>
+<span class="csv-row" lang="ja">行く,to go,verb|N5,</span>
+<span class="csv-row" lang="ja">来る,to come,verb|N5,irregular</span></code></pre>
+      </figure>
+      <div class="guide-rules">
+        <h3>Good to know</h3>
+        <ul>
+          <li><strong>Separator.</strong> Comma, tab or semicolon: Karbka finds it by itself. Excel in many countries saves with semicolons, and that works too.</li>
+          <li><strong>Header row.</strong> Optional. A first row like <code>front,back</code>, <code>question,answer</code>, <code>term,definition</code> or <code>word,translation</code> is recognised and skipped. If it gets it wrong, tick or untick “First row is a header” before you import.</li>
+          <li><strong>Commas inside a card.</strong> Put the cell in double quotes: <code>"ate, eaten"</code>. Spreadsheets do this for you when they save a CSV.</li>
+          <li><strong>Any alphabet.</strong> Save the file as UTF-8 so Japanese, Ukrainian, Greek or accented letters come through. Empty rows are skipped.</li>
+          <li><strong>Big files.</strong> A deck holds up to 999 cards. A bigger file becomes several decks: “Verbs”, “Verbs 2”, “Verbs 3”…</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="guide-sources wrap" aria-labelledby="from-h">
+      <div class="guide-head">
+        <h2 id="from-h">Save a CSV from your spreadsheet</h2>
+        <p>Make a sheet with the front in column A and the back in column B, add tags and notes if you like, then:</p>
+      </div>
+      <div class="guide-panels">
+        <section class="panel platform" aria-labelledby="from-1">
+          <h3 id="from-1">Google Sheets</h3>
+          <ol class="steps">
+            <li><span>File, then Download</span></li>
+            <li><span>Comma-separated values (.csv)</span></li>
+          </ol>
+          <p class="platform-note">On a phone, the Sheets app: ⋮, Share &amp; export, Save as, CSV.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="from-2">
+          <h3 id="from-2">Excel</h3>
+          <ol class="steps">
+            <li><span>File, then Save As (or Save a Copy)</span></li>
+            <li><span>CSV UTF-8 (Comma delimited)</span></li>
+          </ol>
+          <p class="platform-note">Plain “CSV” can break letters outside English; pick the UTF-8 one.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="from-3">
+          <h3 id="from-3">Numbers</h3>
+          <ol class="steps">
+            <li><span>File, then Export To, then CSV</span></li>
+            <li><span>Text Encoding: Unicode (UTF-8)</span></li>
+          </ol>
+          <p class="platform-note">On iPhone and iPad: ⋯, Export, CSV.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="from-4">
+          <h3 id="from-4">Quizlet</h3>
+          <ol class="steps">
+            <li><span>Open a set you made, then ⋯ and Export</span></li>
+            <li><span>Keep Tab between term and definition and New line between rows</span></li>
+            <li><span>Copy the text into a file ending in .txt or .csv</span></li>
+          </ol>
+          <p class="platform-note">Quizlet lets you export the sets you created.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="sheet sheet-butter guide-import" aria-labelledby="import-h">
+      <div class="guide-head">
+        <h2 id="import-h">Import it into Karbka</h2>
+      </div>
+      <div class="guide-import-body">
+        <div class="guide-panels guide-panels-stack">
+        <section class="panel platform" aria-labelledby="import-1">
+          <h3 id="import-1">Into a new deck</h3>
+          <ol class="steps">
+            <li><span>Open a collection and tap ⋯ at the top</span></li>
+            <li><span>Tap Import CSV and pick the file</span></li>
+            <li><span>Check the preview and the deck name (it’s the file name), then tap Import</span></li>
+          </ol>
+          <p class="platform-note">In an empty collection, Import CSV is right on the screen.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="import-2">
+          <h3 id="import-2">Into a deck you have</h3>
+          <ol class="steps">
+            <li><span>Open the deck and tap ⋯, More</span></li>
+            <li><span>Tap Import CSV and pick the file</span></li>
+            <li><span>Tap Import: the cards are added after the ones already there</span></li>
+          </ol>
+          <p class="platform-note">The deck column is ignored here: every card goes into this deck.</p>
+        </section>
+        <section class="panel platform" aria-labelledby="import-3">
+          <h3 id="import-3">Several decks at once</h3>
+          <ol class="steps">
+            <li><span>Add a fifth column, deck, with a deck name on each row</span></li>
+            <li><span>Import it from ⋯ at the top of the collection</span></li>
+            <li><span>Each name becomes its own deck in the collection</span></li>
+          </ol>
+          <p class="platform-note">This is the file Share collection makes, so a whole collection moves in one go.</p>
+        </section>
+        </div>
+        <figure class="shot shot-deck">
+          <img src="/img/deck.webp" width="390" height="844" loading="lazy" alt="The imported deck, Japanese N5 verbs: to eat, to drink, to go, to come, each with its tags" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="guide-export wrap" aria-labelledby="export-h">
+      <h2 id="export-h">Export back to CSV</h2>
+        <p>To edit cards in a spreadsheet or send a deck to a friend, open the deck and tap ⋯, Share CSV. For a whole collection, with the deck column, tap ⋯ at the top of the collection, Share collection. Excel opens these files with every alphabet intact.</p>
+        <p>A CSV holds the cards, not your progress. To move everything, levels included, to another device, use Settings, Backup &amp; transfer, Export library.</p>
+    </section>
+
+    <section class="close wrap" aria-labelledby="close-h">
+      <img class="close-icon" src="/img/icon.svg" width="240" height="240" alt="" loading="lazy" />
+      <div class="close-copy">
+        <h2 id="close-h">Your deck is one file away.</h2>
+        <p>Free, works offline, no account.</p>
+        <a class="btn btn-primary" href="https://app.karbka.com/">Open Karbka</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="/" aria-label="Karbka, home">
+        <img src="/img/icon.svg" width="36" height="36" alt="" />
+        <span>Karbka</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="/#faq">Questions and answers</a></li>
+        <li><a href="https://app.karbka.com/">Open the app</a></li>
+        <li><a href="https://github.com/hlib-zinchenko/karbka">Source code</a></li>
+        <li><a href="https://github.com/hlib-zinchenko/karbka/releases">Release notes</a></li>
+        <li>Questions or a bug: <a href="mailto:hello@hzinchenko.com">hello@hzinchenko.com</a></li>
+      </ul>
+      <p class="footer-small">Free and open source under the MIT licence. This site sets no cookies and uses no third-party analytics. It counts visits on our own server, with nothing that tells you apart: <a href="/#counts">what we count</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

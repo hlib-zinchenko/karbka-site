@@ -4,6 +4,8 @@
 
 - This page in Ukrainian: https://karbka.com/ua/
 - App: https://app.karbka.com/
+- How to import flashcards from CSV, Excel, Google Sheets, Numbers or Quizlet: https://karbka.com/csv/ (Ukrainian: https://karbka.com/ua/csv/)
+- Questions and answers: https://karbka.com/#faq
 - Source code (MIT): https://github.com/hlib-zinchenko/karbka
 - Release notes: https://github.com/hlib-zinchenko/karbka/releases
 - Contact (questions, bug reports): hello@hzinchenko.com

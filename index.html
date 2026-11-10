@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Karbka, flashcards you swipe to learn, even offline</title>
+  <title>Karbka: free flashcard app you swipe to learn, even offline</title>
   <meta name="description" content="Karbka is a free flashcard app for your phone, tablet or computer. Swipe right if you know a card, left if you don't. No account, and it works offline." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="Hlib Zinchenko" />
@@ -63,7 +63,7 @@
         "@type": "WebPage",
         "@id": "https://karbka.com/#webpage",
         "url": "https://karbka.com/",
-        "name": "Karbka, flashcards you swipe to learn, even offline",
+        "name": "Karbka: free flashcard app you swipe to learn, even offline",
         "description": "Karbka is a free flashcard app for your phone, tablet or computer. Swipe right if you know a card, left if you don't. No account, and it works offline.",
         "inLanguage": "en",
         "isPartOf": {
@@ -211,6 +211,105 @@
         "name": "Hlib Zinchenko",
         "url": "https://github.com/hlib-zinchenko",
         "email": "mailto:hello@hzinchenko.com"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://karbka.com/#faq",
+        "url": "https://karbka.com/#faq",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://karbka.com/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Karbka free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. No ads, no subscription and no paid version. It’s open source under the MIT licence: the code is on GitHub."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Open app.karbka.com and start making cards. There is nothing to sign up for."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. After the first visit the whole app is on your device, so you can study on a plane or in the metro. Reading aloud works offline too, with your device’s own voices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where are my cards stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only on your device, in the browser’s storage. They’re never uploaded. The only thing the app sends is an anonymous count once a day, which you can turn off: what we count."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I move my cards to a new phone or computer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Settings, under Backup & transfer, tap Export library. You get one file with every deck, card and tag, and your progress. Open Karbka on the new device and tap Import backup. There’s no sync, so each device keeps its own library."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I lose my cards?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Clearing the browser’s data for app.karbka.com, or removing the installed app, deletes them. Export a backup now and then; the app reminds you when it’s been a while."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I import cards from Excel, Google Sheets or Quizlet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, as a CSV file: the front, the back, then tags and notes if you want them. Comma, tab and semicolon all work. How to import flashcards from CSV."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it use spaced repetition?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Every card has one of six levels, from New to Mastered: Know moves it up one, Don’t know moves it down one. There’s no schedule; you choose what to study, for example only the weak cards, or one tag, before an exam."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which languages can it read aloud?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The ones your device has voices for, like English, Spanish, German, Japanese or Ukrainian. Each collection lists its languages, with a voice for each. On iPhone, add voices in Settings, Accessibility, Spoken Content, Voices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it in the App Store or Google Play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not yet. It installs from the browser and then opens from the home screen like any other app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many cards can I have?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Up to 999 cards in a deck, and as many decks as you like, grouped into collections. A bigger CSV file is split into several decks."
+            }
+          }
+        ]
       }
     ]
   }
@@ -242,7 +341,7 @@
     <!-- Hero: the headline beside a deck the visitor can study. -->
     <section class="hero wrap" aria-labelledby="hero-h">
       <div class="hero-copy">
-        <h1 id="hero-h">Carve it into memory.</h1>
+        <h1 id="hero-h"><span class="hero-kicker">Karbka, the free flashcard app</span> Carve it into memory.</h1>
         <p class="lede">Flashcards you swipe to learn, on your phone, tablet or computer, even offline.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://app.karbka.com/">Open Karbka</a>
@@ -424,7 +523,7 @@
     <section class="csv wrap" aria-labelledby="csv-h">
       <div class="csv-head">
         <h2 id="csv-h">Write a deck in a spreadsheet</h2>
-        <p>Type front, back, tags and notes in Excel or Google Sheets, then import the CSV. Comma, tab or semicolon all work.</p>
+        <p>Type front, back, tags and notes in Excel or Google Sheets, then import the CSV. Comma, tab or semicolon all work. <a href="/csv/">How to import flashcards from CSV</a>.</p>
       </div>
       <figure class="csv-file">
         <figcaption>japanese-n5-verbs.csv</figcaption>
@@ -497,6 +596,60 @@
       </div>
     </section>
 
+    <!-- Questions people ask before they start; the same questions are the FAQPage in the JSON-LD. -->
+    <section class="faq wrap" id="faq" aria-labelledby="faq-h">
+      <div class="faq-head">
+        <h2 id="faq-h">Questions</h2>
+        <p>Short answers to what people ask before they start.</p>
+      </div>
+      <div class="faq-list">
+        <div class="panel faq-item">
+          <h3 id="faq-1">Is Karbka free?</h3>
+          <p>Yes. No ads, no subscription and no paid version. It’s open source under the MIT licence: <a href="https://github.com/hlib-zinchenko/karbka">the code is on GitHub</a>.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-2">Do I need an account?</h3>
+          <p>No. Open <a href="https://app.karbka.com/">app.karbka.com</a> and start making cards. There is nothing to sign up for.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-3">Does it work offline?</h3>
+          <p>Yes. After the first visit the whole app is on your device, so you can study on a plane or in the metro. Reading aloud works offline too, with your device’s own voices.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-4">Where are my cards stored?</h3>
+          <p>Only on your device, in the browser’s storage. They’re never uploaded. The only thing the app sends is an anonymous count once a day, which you can turn off: <a href="#counts">what we count</a>.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-5">How do I move my cards to a new phone or computer?</h3>
+          <p>In Settings, under Backup &amp; transfer, tap Export library. You get one file with every deck, card and tag, and your progress. Open Karbka on the new device and tap Import backup. There’s no sync, so each device keeps its own library.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-6">Can I lose my cards?</h3>
+          <p>Clearing the browser’s data for app.karbka.com, or removing the installed app, deletes them. Export a backup now and then; the app reminds you when it’s been a while.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-7">Can I import cards from Excel, Google Sheets or Quizlet?</h3>
+          <p>Yes, as a CSV file: the front, the back, then tags and notes if you want them. Comma, tab and semicolon all work. <a href="/csv/">How to import flashcards from CSV</a>.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-8">Does it use spaced repetition?</h3>
+          <p>No. Every card has one of six levels, from New to Mastered: Know moves it up one, Don’t know moves it down one. There’s no schedule; you choose what to study, for example only the weak cards, or one tag, before an exam.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-9">Which languages can it read aloud?</h3>
+          <p>The ones your device has voices for, like English, Spanish, German, Japanese or Ukrainian. Each collection lists its languages, with a voice for each. On iPhone, add voices in Settings, Accessibility, Spoken Content, Voices.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-10">Is it in the App Store or Google Play?</h3>
+          <p>Not yet. It <a href="#install">installs from the browser</a> and then opens from the home screen like any other app.</p>
+        </div>
+        <div class="panel faq-item">
+          <h3 id="faq-11">How many cards can I have?</h3>
+          <p>Up to 999 cards in a deck, and as many decks as you like, grouped into collections. A bigger CSV file is split into several decks.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- What we count, and why: the only data that leaves anyone's device. -->
     <section class="sheet counts" id="counts" aria-labelledby="counts-h">
       <div class="counts-head">
@@ -549,6 +702,7 @@
       </a>
       <ul class="footer-links">
         <li><a href="https://app.karbka.com/">Open the app</a></li>
+        <li><a href="/csv/">Import from CSV</a></li>
         <li><a href="https://github.com/hlib-zinchenko/karbka">Source code</a></li>
         <li><a href="https://github.com/hlib-zinchenko/karbka/releases">Release notes</a></li>
         <li>Questions or a bug: <a href="mailto:hello@hzinchenko.com">hello@hzinchenko.com</a></li>

@@ -379,6 +379,7 @@ a {
 @media (max-width: 30rem) {
   /* The hero's install button and the language link stay; these go. */
   .nav-source,
+  .nav-install,
   .nav-links > a[href='#install'] {
     display: none;
   }
@@ -418,6 +419,13 @@ a {
 }
 .hero-copy {
   grid-column: 1 / 7;
+}
+/* What the app is, in words people search for, above the slogan (both are the h1). */
+.hero-kicker {
+  display: block;
+  margin-bottom: var(--space-md);
+  font: 700 var(--text-lede)/1.3 var(--font-ui);
+  letter-spacing: 0;
 }
 .lede {
   margin-top: var(--space-lg);
@@ -1070,6 +1078,205 @@ kbd {
   color: var(--text);
   font: 700 0.9em/1.5 var(--font-ui);
   text-align: center;
+}
+
+/* ---------- Questions ---------- */
+.faq {
+  display: grid;
+  gap: var(--space-xl);
+}
+.faq-head {
+  display: grid;
+  gap: var(--space-lg);
+}
+.faq-head p {
+  max-width: 44ch;
+}
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: var(--space-lg);
+}
+.faq-item {
+  display: grid;
+  align-content: start;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+}
+.faq-item h3 {
+  font-size: clamp(1.1875rem, 1.1rem + 0.3vw, 1.375rem);
+}
+.faq-item p {
+  color: var(--muted-2);
+}
+
+/* ---------- Guide pages (/csv/, /ua/csv/) ---------- */
+.guide-hero {
+  display: grid;
+  gap: var(--space-lg);
+  padding-block: var(--space-xl) var(--space-lg);
+}
+.guide-hero h1 {
+  max-width: 18ch;
+  font-size: var(--text-statement);
+  line-height: 1.02;
+}
+.guide-hero .lede {
+  margin-top: 0;
+  max-width: 44ch;
+}
+.guide-hero .actions {
+  margin-top: var(--space-sm);
+}
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+}
+.crumbs li + li::before {
+  content: '›';
+  margin-right: var(--space-xs);
+}
+.crumbs a {
+  color: var(--text);
+}
+.guide code {
+  font: 500 0.92em/1 var(--font-mono);
+}
+.guide :not(pre) > code {
+  padding: 0.1em 0.35em;
+  border-radius: 6px;
+  background: var(--surface-2);
+}
+.guide-format {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--space-lg);
+  row-gap: var(--space-xl);
+  align-items: start;
+}
+.guide-format-copy {
+  grid-column: 1 / 8;
+  display: grid;
+  gap: var(--space-lg);
+}
+.guide-format .csv-file {
+  grid-column: 8 / 13;
+  grid-row: auto;
+  align-self: center;
+  background: var(--surface-2);
+}
+.guide-format .csv-file pre {
+  font-size: var(--text-small);
+}
+.table-scroll {
+  overflow-x: auto;
+}
+.columns {
+  width: 100%;
+  border-collapse: collapse;
+}
+.columns th,
+.columns td {
+  padding: var(--space-sm) var(--space-md) var(--space-sm) 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.columns thead th {
+  color: var(--muted-2);
+  font-size: var(--text-small);
+}
+.columns tbody th {
+  white-space: nowrap;
+}
+.guide-rules {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--space-md);
+}
+.guide-rules ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-md) var(--space-xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.guide-rules li {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+.guide-sources,
+.guide-import {
+  display: grid;
+  gap: var(--space-xl);
+}
+.guide-head {
+  display: grid;
+  gap: var(--space-lg);
+}
+.guide-head p {
+  max-width: 50ch;
+}
+.guide-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-lg);
+}
+/* Four sources: two by two, four across on a wide screen, one column on a phone. */
+.guide-sources .guide-panels {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 80rem) {
+  .guide-sources .guide-panels {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 40rem) {
+  .guide-sources .guide-panels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.guide-panels-stack {
+  grid-template-columns: minmax(0, 1fr);
+}
+.guide-import-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) min(100%, 20rem);
+  gap: var(--space-xl);
+  align-items: start;
+}
+.guide-import .shot-deck {
+  grid-column: auto;
+  grid-row: auto;
+  width: 100%;
+}
+.guide-export {
+  display: grid;
+  gap: var(--space-lg);
+}
+.guide-export p {
+  max-width: 60ch;
+  font-size: var(--text-lede);
+  line-height: 1.45;
+}
+@media (max-width: 60rem) {
+  .guide-format-copy,
+  .guide-format .csv-file {
+    grid-column: 1 / -1;
+  }
+  .guide-import-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .guide-import .shot-deck {
+    justify-self: center;
+    width: min(100%, 20rem);
+  }
 }
 
 /* ---------- What we count ---------- */
